@@ -15,6 +15,6 @@ public class Grow : MonoBehaviour {
 
     private void SetValue(float value)
     {
-        transform.localScale = Vector3.one * (minScale + (maxScale - minScale) * value);
+		transform.localScale = Vector3.one * (minScale + (maxScale - minScale) * value* value* value* value* value* value* value);
     }
 }
