@@ -3,18 +3,25 @@
 
 public class Grow : MonoBehaviour {
 
-    public SliderControl sliderControl;
+    public SliderControl scaleSliderControl;
+    public SliderControl rotationSliderControl;
     public float minScale = 1;
     public float maxScale = 100;
     
     void Start()
     {
         transform.localScale = Vector3.one * minScale;
-        sliderControl.OnValueChanged += SetValue;
+        scaleSliderControl.OnValueChanged += SetScaleValue;
+        rotationSliderControl.OnValueChanged += SetRotationValue;
     }
 
-    private void SetValue(float value)
+    private void SetScaleValue(float value)
     {
 		transform.localScale = Vector3.one * (minScale + (maxScale - minScale) * value* value* value* value* value* value* value);
+    }
+
+    private void SetRotationValue(float value)
+    {
+        transform.localRotation = Quaternion.Euler(0, value * 360, 0);
     }
 }
