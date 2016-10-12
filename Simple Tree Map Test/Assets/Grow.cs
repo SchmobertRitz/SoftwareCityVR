@@ -11,8 +11,14 @@ public class Grow : MonoBehaviour {
     void Start()
     {
         transform.localScale = Vector3.one * minScale;
-        scaleSliderControl.OnValueChanged += SetScaleValue;
-        rotationSliderControl.OnValueChanged += SetRotationValue;
+        if (scaleSliderControl != null)
+        {
+            scaleSliderControl.OnValueChanged += SetScaleValue;
+        }
+        if (rotationSliderControl != null)
+        {
+            rotationSliderControl.OnValueChanged += SetRotationValue;
+        }
     }
 
     private void SetScaleValue(float value)
