@@ -6,7 +6,7 @@ public class SpotlightLifeCycle : MonoBehaviour {
     private Light light;
     private Camera cam;
 	
-	void Start () {
+	void Awake () {
         LifeCycle lifeCycle = FindObjectOfType<LifeCycle>();
         lifeCycle.OnBeginHandler += BeginInternal;
         lifeCycle.OnFinishHandler += FinishInternal;
